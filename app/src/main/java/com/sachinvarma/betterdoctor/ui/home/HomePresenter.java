@@ -3,6 +3,7 @@ package com.sachinvarma.betterdoctor.ui.home;
 import android.support.annotation.NonNull;
 import com.sachinvarma.betterdoctor.interfaces.ApiInterface;
 import com.sachinvarma.betterdoctor.model.dataresponse.DoctorsDataModel;
+import com.sachinvarma.betterdoctor.ui.home.HomeContract.View;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -12,12 +13,23 @@ public class HomePresenter implements HomeContract.Presenter {
   private HomeContract.View view;
   private ApiInterface apiInterface;
 
-  public HomePresenter(@NonNull final HomeContract.View view,
-    @NonNull final ApiInterface apiInterface) {
+  //public HomePresenter(
+  //  @NonNull final HomeContract.View view, @NonNull final ApiInterface apiInterface
+  //) {
+  //  this.view = view;
+  //  this.apiInterface = apiInterface;
+  //}
+  //
+  @Override
+  public void attachView(@NonNull final View view, @NonNull final ApiInterface apiInterface) {
     this.view = view;
     this.apiInterface = apiInterface;
   }
 
+  @Override
+  public void detach() {
+    this.view = null;
+  }
 
   @Override
   public void getDoctorsData(
@@ -39,9 +51,8 @@ public class HomePresenter implements HomeContract.Presenter {
   ) {
 
     try {
-      apiInterface
-        .getDoctorsList(name, first_name, last_name, query, specialty_uid, insurance_uid,
-          practice_uid, location, user_location, gender, sort, fields, skip, limit, user_key)
+      apiInterface.getDoctorsList(name, first_name, last_name, query, specialty_uid, insurance_uid,
+        practice_uid, location, user_location, gender, sort, fields, skip, limit, user_key)
         .enqueue(new Callback<DoctorsDataModel>() {
           @Override
           public void onResponse(
@@ -50,15 +61,10 @@ public class HomePresenter implements HomeContract.Presenter {
             if (view != null) {
               //view.dismissPb();
               if (response.isSuccessful() && response.body() != null) {
-                if (response.body()!=null &&
-                  !response.body().data.isEmpty()) {
+                if (response.body() != null && !response.body().data.isEmpty()) {
                   view.setDoctorsData(response.body());
-                }
-                else  if (response.body()!=null)
-                {
+                } else if (response.body() != null) {
                   view.noDoctorsFound();
-
-
                 }
               } else {
                 view.noDoctorsFound();

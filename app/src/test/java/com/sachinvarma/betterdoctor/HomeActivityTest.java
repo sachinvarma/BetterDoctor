@@ -33,7 +33,8 @@ public class HomeActivityTest {
 
   @Before
   public void setUp() {
-    presenter = new HomePresenter(view, apiInterface);
+    presenter = new HomePresenter();
+    presenter.attachView(view, apiInterface);
   }
 
   @Test
