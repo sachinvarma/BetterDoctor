@@ -1,0 +1,2 @@
+# BetterDoctor
+BetterDoctor powers the data behind the state of Washington’s health benefit exchange, the Washington Healthplanfinder (WAHBE). BetterDoctor created an accurate multiplan provider directory by aggregating data across 13 exchange health plans.  By validating provider information straight from the source, WAHBE and BetterDoctor were able to use a custom API with real-time updates, giving consumers an improved consumer experience that led to the state’s highest enrollment numbers to date.
