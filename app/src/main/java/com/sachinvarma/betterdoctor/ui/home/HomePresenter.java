@@ -13,23 +13,23 @@ public class HomePresenter implements HomeContract.Presenter {
   private HomeContract.View view;
   private ApiInterface apiInterface;
 
-  //public HomePresenter(
-  //  @NonNull final HomeContract.View view, @NonNull final ApiInterface apiInterface
-  //) {
-  //  this.view = view;
-  //  this.apiInterface = apiInterface;
-  //}
-  //
-  @Override
-  public void attachView(@NonNull final View view, @NonNull final ApiInterface apiInterface) {
+  public HomePresenter(
+    @NonNull final HomeContract.View view, @NonNull final ApiInterface apiInterface
+  ) {
     this.view = view;
     this.apiInterface = apiInterface;
   }
 
-  @Override
-  public void detach() {
-    this.view = null;
-  }
+  //@Override
+  //public void attachView(@NonNull final View view, @NonNull final ApiInterface apiInterface) {
+  //  this.view = view;
+  //  this.apiInterface = apiInterface;
+  //}
+  //
+  //@Override
+  //public void detach() {
+  //  this.view = null;
+  //}
 
   @Override
   public void getDoctorsData(
@@ -61,7 +61,8 @@ public class HomePresenter implements HomeContract.Presenter {
             if (view != null) {
               //view.dismissPb();
               if (response.isSuccessful() && response.body() != null) {
-                if (response.body() != null && !response.body().data.isEmpty()) {
+                if (response.body().data != null && !response.body().data
+                  .isEmpty()) {
                   view.setDoctorsData(response.body());
                 } else if (response.body() != null) {
                   view.noDoctorsFound();

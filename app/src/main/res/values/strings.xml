@@ -1,4 +1,7 @@
 <resources>
   <string name="app_name">BetterDoctor</string>
   <string name="app_user_key">df5e0bcdc894eb54343ae4daaaf618eb</string>
+  <string name="navigation_drawer_open">nav_draw_open</string>
+  <string name="navigation_drawer_close">nav_draw_close</string>
+  <string name="doctor_image">DoctorImage</string>
 </resources>

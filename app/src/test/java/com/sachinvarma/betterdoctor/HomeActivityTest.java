@@ -33,8 +33,7 @@ public class HomeActivityTest {
 
   @Before
   public void setUp() {
-    presenter = new HomePresenter();
-    presenter.attachView(view, apiInterface);
+    presenter = new HomePresenter(view, apiInterface);
   }
 
   @Test
@@ -42,12 +41,12 @@ public class HomeActivityTest {
     // Given
     DoctorsDataModel model = new DoctorsDataModel();
     model.data = Arrays.asList(new DoctorsListModel(), new DoctorsListModel());
-    when(
-      apiInterface.getDoctorsList("", "", "", "", "", "", "", "37.773,-122.413,100", "", "", "", "",
-        "", "", "")).thenReturn(Calls.response(model));
+    when(apiInterface.getDoctorsList("", "", "", "", "", "", "", "37.773,-122.413,100",
+      "37.773,-122.413", "male", "full-name-asc", "", "", "10", "df5e0bcdc894eb54343ae4daaaf618eb"))
+      .thenReturn(Calls.response(model));
     // When
     presenter.getDoctorsData("", "", "", "", "", "", "", "37.773,-122.413,100", "37.773,-122.413",
-      "", "", "", "", "", "");
+      "male", "full-name-asc", "", "", "10", "df5e0bcdc894eb54343ae4daaaf618eb");
     // Then
     verify(view).setDoctorsData(model);
   }
@@ -56,7 +55,7 @@ public class HomeActivityTest {
   public void noDataReceived() {
     // Given
     DoctorsDataModel model = new DoctorsDataModel();
-    model.data = Collections.emptyList();
+    model.data = Collections.<DoctorsListModel>emptyList();
     when(apiInterface.getDoctorsList("", "", "", "", "", "", "", "", "", "", "", "", "", "",
       "")).thenReturn(Calls.response(model));
     // When

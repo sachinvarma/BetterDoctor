@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+  <ImageView
+      android:id="@+id/ivDoctor"
+      android:layout_width="@dimen/dimen100"
+      android:layout_height="@dimen/dimen100"
+      android:layout_marginBottom="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen16"
+      android:contentDescription="@string/doctor_image"
+      android:src="@color/colorPrimaryLight"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0"
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvDoctorsName"
+      android:layout_width="@dimen/dimen0"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen16"
+      android:text="Doctor One"
+      android:textColor="@color/colorPrimary"
+      android:textSize="@dimen/textSize16"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/ivDoctor"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvDoctorsQualification"
+      android:layout_width="@dimen/dimen0"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen5"
+      android:text="Qualification: MD"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/ivDoctor"
+      app:layout_constraintTop_toBottomOf="@+id/tvDoctorsName"
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvDoctorsSpecialities"
+      android:layout_width="@dimen/dimen0"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen5"
+      android:text="Specialities: Critical Care Doctor, Pulmonologist"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/ivDoctor"
+      app:layout_constraintTop_toBottomOf="@+id/tvDoctorsQualification"
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvDoctorsLocations"
+      android:layout_width="@dimen/dimen0"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/dimen16"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen5"
+      android:text="Locations: California, Los Angeles"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/ivDoctor"
+      app:layout_constraintTop_toBottomOf="@+id/tvDoctorsSpecialities"
+      app:layout_constraintVertical_bias="0"
+      />
+
+</android.support.constraint.ConstraintLayout>
