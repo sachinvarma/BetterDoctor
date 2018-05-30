@@ -1,8 +1,28 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+
     ext.kotlin_version = '1.2.41'
     ext.supportVersion = '27.1.1'
+    ext.constraintLayoutVersion = '1.1.0'
+    ext.gsonVersion = '2.8.0'
+    ext.retrofitVersion = '2.4.0'
+    ext.converterGsonVersion = '2.3.0'
+    ext.adapterRxjava2Version = '2.3.0'
+    ext.loggingInterceptorVersion = '3.8.0'
+    ext.okHttpVersion = '3.10.0'
+    ext.butterknifeVersion = '8.8.1'
+    ext.mockitoCoreVersion = '2.16.0'
+    ext.butterknifeCompilerVersion = '8.8.1'
+    ext.junitVersion = '4.12'
+    ext.testRunnerVersion = '1.0.2'
+    ext.espressoCoreVersion = '3.0.2'
+    ext.picassoVersion = '2.71828'
+    ext.fiftyshadesofVersion = '1.0.0'
+    ext.playServicesVersion = '12.0.1'
+    ext.rxjavaVersion = '2.1.14'
+    ext.rxandroidVersion = '2.0.1'
+
     repositories {
         google()
         jcenter()
