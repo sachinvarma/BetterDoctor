@@ -293,7 +293,6 @@ public class HomeActivity extends AppCompatActivity
     });
     rvDoctors.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-    //getDoctorsData("", "", "", "", "", "", "", "", "", "", "", "");
   }
 
   public void dismissPb() {
@@ -443,20 +442,6 @@ public class HomeActivity extends AppCompatActivity
     }
   }
 
-  //@Override
-  //protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-  //  super.onActivityResult(requestCode, resultCode, data);
-  //
-  //  if (requestCode == 100) {
-  //    cl_filter.setVisibility(android.view.View.VISIBLE);
-  //  }
-  //}
-
-  /**
-   * Function called when we want to get location from GPS. This function will take care of asking
-   * permission,
-   * swiching on GPS and getting location. To get location, just call this function.
-   */
   private void getLocationUpdate() {
     if (googleApiClient == null) {
       initLocation();
