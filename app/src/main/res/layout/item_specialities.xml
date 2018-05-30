@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/dimen10"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvName"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginTop="@dimen/dimen20"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginEnd="@dimen/dimen16"
+      tools:text="V.S.M Hospital"
+      android:textColor="@color/colorPrimaryDark"
+      android:textSize="@dimen/textSize16"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvDes"
+      android:layout_marginTop="@dimen/dimen5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvName"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginEnd="@dimen/dimen16"
+      tools:text="Phone: 8310067561 \n Fax: 4564554 "
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      />
+</android.support.constraint.ConstraintLayout>

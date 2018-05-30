@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    >
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvEducations"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginTop="@dimen/dimen10"
+      android:layout_marginBottom="@dimen/dimen10"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginEnd="@dimen/dimen16"
+      tools:text="Institution: New York Medical College \nDegree: Internship "
+      android:textColor="@color/colorPrimaryLight"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      />
+
+</android.support.constraint.ConstraintLayout>

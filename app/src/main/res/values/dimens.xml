@@ -35,8 +35,9 @@
     <dimen name="dimen100">100dp</dimen>
     <dimen name="dimen120">120dp</dimen>
   <dimen name="dimen200">200dp</dimen>
-   
-    <!--<dimen name="textSize20">20sp</dimen>-->
+  <dimen name="dimen2">2dp</dimen>
+
+  <!--<dimen name="textSize20">20sp</dimen>-->
     <!--<dimen name="textSize8">8sp</dimen>-->
     <!--<dimen name="textSize10">10sp</dimen>-->
     <!--<dimen name="textSize12">12sp</dimen>-->

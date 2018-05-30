@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+  <FrameLayout
+      android:id="@+id/layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      >
+
+    <include layout="@layout/item_doctors"/>
+
+  </FrameLayout>
+
+  <RelativeLayout
+      android:id="@+id/layout1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      >
+
+    <include layout="@layout/item_doctors"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/layout2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      >
+
+    <include layout="@layout/item_doctors"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/layout3"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      >
+
+    <include layout="@layout/item_doctors"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/layout4"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      >
+
+    <include layout="@layout/item_doctors"/>
+
+  </RelativeLayout>
+</LinearLayout>

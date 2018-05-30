@@ -1,5 +1,8 @@
 package com.sachinvarma.betterdoctor.ui.home;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.AppCompatTextView;
@@ -8,14 +11,17 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.sachinvarma.betterdoctor.R;
+import com.sachinvarma.betterdoctor.custom.CircleImageView;
 import com.sachinvarma.betterdoctor.model.dataresponse.DoctorsListModel;
+import com.sachinvarma.betterdoctor.ui.doctordetails.DoctorDetailsActivity;
 import com.sachinvarma.betterdoctor.ui.home.HomeDoctorsRecyclerAdapter.MyViewHolder;
 import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeDoctorsRecyclerAdapter extends Adapter<MyViewHolder> {
@@ -24,7 +30,7 @@ public class HomeDoctorsRecyclerAdapter extends Adapter<MyViewHolder> {
 
   class MyViewHolder extends ViewHolder {
     @BindView(R.id.ivDoctor)
-    ImageView ivDoctor;
+    CircleImageView ivDoctor;
     @BindView(R.id.tvDoctorsName)
     AppCompatTextView tvDoctorsName;
     @BindView(R.id.tvDoctorsQualification)
@@ -55,6 +61,7 @@ public class HomeDoctorsRecyclerAdapter extends Adapter<MyViewHolder> {
     return new MyViewHolder(itemView);
   }
 
+  @SuppressLint("SetTextI18n")
   @Override
   public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     DoctorsListModel doctorsListModel = doctorsDataList.get(position);
@@ -89,12 +96,17 @@ public class HomeDoctorsRecyclerAdapter extends Adapter<MyViewHolder> {
 
     if (doctorsListModel.practices != null && doctorsListModel.practices.size() > 0) {
       String locations = "";
+      List<String> locationsList = new ArrayList<>();
       for (int i = 0; i < doctorsListModel.practices.size(); i++) {
         if (!TextUtils.isEmpty(doctorsListModel.practices.get(i).location_slug)) {
-          if (!TextUtils.isEmpty(locations)) {
-            locations += ", " + doctorsListModel.practices.get(i).location_slug;
-          } else {
-            locations = "Locations: " + doctorsListModel.practices.get(i).location_slug;
+
+          if (!locationsList.contains(doctorsListModel.practices.get(i).location_slug)) {
+            locationsList.add(doctorsListModel.practices.get(i).location_slug);
+            if (!TextUtils.isEmpty(locations)) {
+              locations += ", " + doctorsListModel.practices.get(i).location_slug;
+            } else {
+              locations = "Locations: " + doctorsListModel.practices.get(i).location_slug;
+            }
           }
         }
       }
@@ -141,10 +153,31 @@ public class HomeDoctorsRecyclerAdapter extends Adapter<MyViewHolder> {
     if (doctorsListModel.profile != null) {
       Picasso.get().load(doctorsListModel.profile.image_url).into(holder.ivDoctor);
     }
+
+    holder.clParent.setTag(position);
+    holder.clParent.setOnClickListener(onClickListener);
   }
 
   @Override
   public int getItemCount() {
     return doctorsDataList.size();
   }
+
+  //public void updateList(final List<DoctorsListModel> listModelList) {
+  //
+  //  this.doctorsDataList.addAll(listModelList);
+  //  notifyDataSetChanged();
+  //}
+
+  private OnClickListener onClickListener = new OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+      int position = (Integer) v.getTag();
+      Bundle bundle = new Bundle();
+      bundle.putSerializable("DoctorsData", doctorsDataList.get(position));
+      v.getContext()
+        .startActivity(new Intent(v.getContext(), DoctorDetailsActivity.class).putExtras(bundle));
+    }
+  };
 }

@@ -19,7 +19,7 @@ public class HomeContract {
   public interface Presenter  {
 
     void getDoctorsData(
-      @NonNull final String name,
+     /* @NonNull final String name,
       @NonNull final String first_name,
       @NonNull final String last_name,
       @NonNull final String query,
@@ -33,7 +33,8 @@ public class HomeContract {
       @NonNull final String fields,
       @NonNull final String skip,
       @NonNull final String limit,
-      @NonNull final String user_key
+      @NonNull final String user_key*/
+     @NonNull String url
     );
   }
 }

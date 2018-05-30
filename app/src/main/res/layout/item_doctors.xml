@@ -9,7 +9,7 @@
     android:background="@color/white"
     >
 
-  <ImageView
+  <com.sachinvarma.betterdoctor.custom.CircleImageView
       android:id="@+id/ivDoctor"
       android:layout_width="@dimen/dimen100"
       android:layout_height="@dimen/dimen100"

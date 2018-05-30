@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dimen10"
+    android:background="@color/white"
+    >
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvHospName"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen20"
+      android:textColor="@color/colorPrimaryDark"
+      android:textSize="@dimen/textSize16"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="V.S.M Hospital"
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvHospPhone"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen5"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvHospName"
+      tools:text="Phone: 8310067561 \n Fax: 4564554 "
+      />
+
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvHospAddress"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen5"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvHospPhone"
+      tools:text="Address: 16200 Sand Canyon Ave, Irvine. CA 92618"
+      />
+  <android.support.v7.widget.AppCompatTextView
+      android:id="@+id/tvHosWebsite"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen5"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="@dimen/textSize14"
+      android:autoLink="web"
+      android:linksClickable="true"
+      android:textColorLink="#6c8dfa"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvHospAddress"
+      tools:text="Website: http://www.hoag.org/"
+      />
+</android.support.constraint.ConstraintLayout>

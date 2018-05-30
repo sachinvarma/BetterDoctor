@@ -1,8 +1,9 @@
 package com.sachinvarma.betterdoctor.model.dataresponse;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DoctorsProfile {
+public class DoctorsProfile implements Serializable {
 
   public String first_name;
   public String middle_name;

@@ -26,41 +26,120 @@
           android:layout_height="?actionBarSize"
           app:contentInsetEnd="0dp"
           app:contentInsetLeft="0dp"
-          app:title=""
           app:contentInsetRight="0dp"
           app:contentInsetStart="0dp"
+          app:title=""
           >
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginEnd="16dp"
             android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
             >
-        <ImageView
-            android:layout_width="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
-            android:src="@drawable/betterdoctor_logo"
-            />
-
+          <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:scaleType="centerInside"
+              android:src="@drawable/betterdoctor_logo"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              />
 
         </android.support.constraint.ConstraintLayout>
 
       </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvDoctors"
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_filter"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar"
-        tools:listitem="@android:layout/simple_list_item_multiple_choice"
-        />
+        >
 
+      <android.support.constraint.Guideline
+          android:id="@+id/guideLine"
+          android:layout_width="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent="0.5"
+          android:layout_height="wrap_content"
+          />
+
+      <Button
+          android:id="@+id/btFilterEdit"
+          android:layout_width="wrap_content"
+          android:text="Edit Filter"
+          android:layout_marginTop="@dimen/dimen10"
+          android:layout_marginBottom="@dimen/dimen10"
+          android:layout_marginEnd="@dimen/dimen5"
+          app:layout_constraintEnd_toStartOf="@+id/guideLine"
+          android:background="@drawable/bg_filter_buttons_corner_ovaled_grey"
+          android:layout_height="30dp"
+          android:padding="@dimen/dimen5"
+          android:textColor="@color/white"
+          android:textAllCaps="false"
+          android:textSize="@dimen/textSize14"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          />
+
+      <Button
+          android:id="@+id/btFilterRemove"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_width="wrap_content"
+          android:text="Remove Filter"
+          android:padding="@dimen/dimen5"
+          android:textColor="@color/white"
+          android:textAllCaps="false"
+          android:layout_marginStart="@dimen/dimen5"
+          android:layout_marginTop="@dimen/dimen10"
+          android:layout_marginBottom="@dimen/dimen10"
+          app:layout_constraintStart_toEndOf="@id/guideLine"
+          android:background="@drawable/bg_filter_buttons_corner_ovaled_grey"
+          android:layout_height="30dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_filter"
+        >
+      <include
+          layout="@layout/recyclerview_home_loader"/>
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/rvDoctors"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/cl_filter"
+          tools:listitem="@android:layout/simple_list_item_multiple_choice"
+          />
+
+
+    </FrameLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
   </android.support.constraint.ConstraintLayout>
   <android.support.design.widget.NavigationView
       android:id="@+id/nav_view"

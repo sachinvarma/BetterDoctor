@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+  <android.support.design.widget.AppBarLayout
+      android:id="@+id/appbar"
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:title=""
+        >
+      <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginEnd="16dp"
+          >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/projectlogo"
+            android:scaleType="centerInside"
+            android:src="@drawable/betterdoctor_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+      </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+  </android.support.design.widget.AppBarLayout>
+
+
+  <android.support.v4.widget.NestedScrollView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@color/white"
+      android:fillViewport="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/appbar"
+      >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+
+      <com.sachinvarma.betterdoctor.custom.CircleImageView
+          android:id="@+id/ivDoctor"
+          android:layout_width="@dimen/dimen100"
+          android:layout_height="@dimen/dimen100"
+          android:layout_marginEnd="@dimen/dimen16"
+          android:layout_marginStart="@dimen/dimen16"
+          android:layout_marginTop="@dimen/dimen16"
+          android:contentDescription="@string/doctor_image"
+          android:src="@color/colorPrimaryLight"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvDocName"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="@dimen/dimen16"
+          android:layout_marginStart="@dimen/dimen16"
+          android:layout_marginTop="@dimen/dimen10"
+          android:gravity="center"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="@dimen/textSize16"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/ivDoctor"
+          tools:text="M R DevRaj"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvDocBio"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="@dimen/dimen16"
+          android:layout_marginStart="@dimen/dimen16"
+          android:layout_marginTop="@dimen/dimen10"
+          android:textColor="@color/colorPrimaryLight"
+          android:textSize="@dimen/textSize14"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvDocName"
+          tools:text="Dr. Janie Liao, MD, specialist in hospitalist and internal medicine, currently practices medicine at Newport beach, California and Irvine, California.\n\nDr. Liao is licensed to treat patients in Washington and California.\n\nDr. Liao has been found during an automated background check to be clear of any malpractice history and holds one or more active medical licenses."
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvEducation"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/dimen10"
+          android:background="#ccc"
+          android:paddingEnd="@dimen/dimen16"
+          android:paddingStart="@dimen/dimen16"
+          android:text="@string/educations"
+          android:textColor="@color/black"
+          android:textSize="@dimen/textSize14"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvDocBio"
+          />
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/rvEducations"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/bg_recyclerview"
+          android:layout_margin="@dimen/dimen10"
+          android:padding="@dimen/dimen1"
+          android:clipToPadding="false"
+          app:layout_constraintBottom_toTopOf="@+id/tvSpecialities"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvEducation"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvSpecialities"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/dimen10"
+          android:background="#ccc"
+          android:paddingEnd="@dimen/dimen16"
+          android:paddingStart="@dimen/dimen16"
+          android:text="@string/specialities"
+          android:textColor="@color/black"
+          android:textSize="@dimen/textSize14"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/rvEducations"
+          />
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/rvSpecialities"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/bg_recyclerview"
+          android:layout_margin="@dimen/dimen10"
+          android:padding="@dimen/dimen1"
+          android:clipToPadding="false"
+          app:layout_constraintBottom_toTopOf="@+id/tvPractises"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvSpecialities"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvPractises"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/dimen10"
+          android:background="#ccc"
+          android:paddingEnd="@dimen/dimen16"
+          android:paddingStart="@dimen/dimen16"
+          android:text="@string/practises"
+          android:textColor="@color/black"
+          android:textSize="@dimen/textSize14"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/rvSpecialities"
+          />
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/rvPractises"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/bg_recyclerview"
+          android:layout_margin="@dimen/dimen10"
+          android:padding="@dimen/dimen1"
+          android:clipToPadding="false"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvPractises"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvLicensesTitle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/dimen10"
+          android:background="#ccc"
+          android:paddingEnd="@dimen/dimen16"
+          android:paddingStart="@dimen/dimen16"
+          android:text="@string/licenses_in"
+          android:textColor="@color/black"
+          android:textSize="@dimen/textSize14"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/rvPractises"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvLicenses"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="@dimen/dimen16"
+          android:layout_marginStart="@dimen/dimen16"
+          android:layout_marginTop="@dimen/dimen10"
+          android:visibility="gone"
+          android:textColor="@color/colorPrimaryLight"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvLicensesTitle"
+          />
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvInsurances"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="@dimen/dimen16"
+          android:layout_marginStart="@dimen/dimen16"
+          android:visibility="invisible"
+          android:layout_marginBottom="@dimen/dimen10"
+          android:layout_marginTop="@dimen/dimen10"
+          android:textColor="@color/colorPrimaryLight"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tvLicenses"
+          />
+
+
+    </android.support.constraint.ConstraintLayout>
+  </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

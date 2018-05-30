@@ -1,6 +1,8 @@
 package com.sachinvarma.betterdoctor.model.dataresponse;
 
-public class LanguagesKnown {
+import java.io.Serializable;
+
+public class LanguagesKnown implements Serializable {
 
   public String name;
   public String code;

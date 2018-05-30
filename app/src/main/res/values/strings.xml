@@ -4,4 +4,21 @@
   <string name="navigation_drawer_open">nav_draw_open</string>
   <string name="navigation_drawer_close">nav_draw_close</string>
   <string name="doctor_image">DoctorImage</string>
+  <string name="specialisations"></string>
+  <string name="projectlogo">ProjectLogo</string>
+  <string name="educations">Educations:</string>
+  <string name="specialities">Specialities:</string>
+  <string name="practises">Practises:</string>
+  <string name="licenses_in">Licenses In:</string>
+  <string name="search">Search</string>
+  <string name="location_eg_california">Location: eg(California)</string>
+  <string name="all">All</string>
+  <string name="female">Female</string>
+  <string name="male">Male</string>
+  <string name="doctor_s_gender">Doctor\'s Gender</string>
+  <string name="disease_or_symptoms">Disease or Symptoms</string>
+  <string name="insurances_in">Insurances In</string>
+  <string name="practises_in">Practises In</string>
+  <string name="specialisation_eg_pediatrician_gynecology">Specialisation: eg (Pediatrician, Gynecology)</string>
+  <string name="doctor_s_name">Doctor\'s Name</string>
 </resources>
