@@ -2,6 +2,7 @@ package com.sachinvarma.betterdoctor.interfaces;
 
 import com.sachinvarma.betterdoctor.model.dataresponse.DoctorsDataModel;
 import com.sachinvarma.betterdoctor.services.ApiClient;
+import io.reactivex.Observable;
 import io.reactivex.Single;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -20,6 +21,6 @@ public interface ApiInterface {
    * @return response
    */
   @GET()
-  Single<DoctorsDataModel> getDoctorsList(@Url String url
+  Observable<DoctorsDataModel> getDoctorsList(@Url String url
   );
 }

@@ -58,13 +58,15 @@ import com.sachinvarma.betterdoctor.model.dataresponse.DoctorsListModel;
 import com.sachinvarma.betterdoctor.services.ApiClient;
 import com.sachinvarma.betterdoctor.ui.home.HomeContract.View;
 import com.sachinvarma.betterdoctor.ui.searchdoctor.SearchDoctorActivity;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity
-  implements View, OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks,
+  implements HomeContract.View, OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks,
   GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
   private static final String TAG = "HomeActivity";
@@ -199,8 +201,9 @@ public class HomeActivity extends AppCompatActivity
     } else {
       fiftyShadesOf.stop();
       llParent.setVisibility(android.view.View.GONE);
-      if(doctorsDataList.size()<=0){
-        Snackbar.make(drawerLayout,"Oops! No Doctor's Found",3000).show();}
+      if (doctorsDataList.size() <= 0) {
+        Snackbar.make(drawerLayout, "Oops! No Doctor's Found", 3000).show();
+      }
 
       pageCount = String.valueOf(Integer.parseInt(pageCount) - 10);
     }
@@ -214,9 +217,9 @@ public class HomeActivity extends AppCompatActivity
     pageCount = String.valueOf(Integer.parseInt(pageCount) - 10);
     fiftyShadesOf.stop();
     llParent.setVisibility(android.view.View.GONE);
-    if(doctorsDataList.size()<=0){
-      Snackbar.make(drawerLayout,"Oops! No Doctor's Found",3000).show();}
-
+    if (doctorsDataList.size() <= 0) {
+      Snackbar.make(drawerLayout, "Oops! No Doctor's Found", 3000).show();
+    }
   }
 
   @Override
@@ -740,5 +743,10 @@ public class HomeActivity extends AppCompatActivity
     doctorsDataList.clear();
     pageCount = "-10";
     locationName = "";
+  }
+
+  //@Override
+  public void errorOccurred(@NonNull String error) {
+    Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
   }
 }
